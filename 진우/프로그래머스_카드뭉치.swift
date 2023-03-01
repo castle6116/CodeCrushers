@@ -4,6 +4,8 @@
 //
 //  Created by 김진우 on 2023/02/25.
 //
+// https://school.programmers.co.kr/learn/courses/30/lessons/159994
+// 느낀점: 크게 어렵지 않았던 문제다.
 
 import Foundation
 
