@@ -4,12 +4,10 @@
 //
 //  Created by 김진우 on 2023/03/01.
 //
+// https://school.programmers.co.kr/learn/courses/30/lessons/150370
+// 느낀점: 날자 계산까지는 쉬웠는데 if문에서 머리 과부화와서 시간이 조금 걸렸다.
 
 import Foundation
-
-//"2022.05.19",
-//["A 6", "B 12", "C 3"],
-//["2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"]
 
 func 프로그래머스_개인정보_수집_유효기간(_ today:String, _ terms:[String], _ privacies:[String]) -> [Int] {
     var item = [String: Int]()
