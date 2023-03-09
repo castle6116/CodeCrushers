@@ -20,8 +20,9 @@ function solution(people, limit) {
 }
 
 
+
+
 /**
- * 
  * @author Sean.Kim 등
  * @param {*} people 
  * @param {*} limit 
