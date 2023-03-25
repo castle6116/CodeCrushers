@@ -30,6 +30,13 @@ def solution(storey):
     return stone
 
 
+# 다른 사람 풀이 - 그리디
+def solution2(storey):
+    if storey < 10:
+        return min(storey, 11 - storey)
+    left = storey % 10
+    return min(left + solution(storey // 10), 10 - left + solution(storey // 10 + 1))
+
 
 # test1 (result = 6)
 print(solution(16))
