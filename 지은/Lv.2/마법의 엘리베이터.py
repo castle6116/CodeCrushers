@@ -1,3 +1,9 @@
+"""
+https://school.programmers.co.kr/learn/courses/30/lessons/148653
+
+그리디 알고리즘: 각 단계에서 가장 최선을 선택을 해나가는 알고리즘
+"""
+
 def solution(storey):
     stone = 0
 
