@@ -31,4 +31,3 @@ function solution(n, trains, bookings) {
     return answer;
 }
 
-export default solution;

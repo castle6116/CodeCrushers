@@ -19,31 +19,33 @@
  *     - edges 가 의미하는 그래프가 항상 트리인 경우만 입력으로 주어집니다.
  */
 function solution(n, edges) {
-    let graph = Array.from(new Array(n), () => new Array(n).fill(false));
-    for(let i = 0; i < edges.length; i++) {
-        const index0 = edges[i][0];
-        const index1 = edges[i][1];
-        graph[index0, index1] = true;
-    }
-    // tbd...
-    
-    for(let i = 0; i < 5; i++) {
-        
-    }
-    return answer;
+  let graph = Array.from(new Array(n), () => new Array(n).fill(false));
+  for(let i = 0; i < edges.length; i++) {
+    const index0 = edges[i][0];
+    const index1 = edges[i][1];
+    graph[index0, index1] = true;
+  }
+  // tbd...
+
+  for(let i = 0; i < 5; i++) {
+      
+  }
+  return answer;
 }
 
 function isanswer() {
-    const n1 = 5;
-    const n2 = 4;
-    const edges1 = [[0, 1], [0, 2], [1, 3], [1, 4]];
-    const edges2 = [[2, 3], [0, 1], [1, 2]];
-    const result1 = 16;
-    const result2 = 8;
-    if(solution(n1, edges1) === result1 && solution(n2, edges2) === result2) {
-        return console.log("성공했습니다! >_<");
-    } else {
-        return console.log("흑흑.. 틀렸습니다..ㅠㅠ");
-    }
+  const n1 = 5;
+  const n2 = 4;
+  const edges1 = [[0, 1], [0, 2], [1, 3], [1, 4]];
+  const edges2 = [[2, 3], [0, 1], [1, 2]];
+  const result1 = 16;
+  const result2 = 8;
+  if(solution(n1, edges1) === result1 && solution(n2, edges2) === result2) {
+    return console.log("성공했습니다! >_<");
+  } else {
+    return console.log("흑흑.. 틀렸습니다..ㅠㅠ");
+  }
 }
+
+
 
