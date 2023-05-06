@@ -1,8 +1,8 @@
 /**
  * https://school.programmers.co.kr/learn/courses/30/lessons/42587
  * @author HwaYeon
- * @param {*} priorities 
- * @param {*} location 
+ * @param {number[]} priorities 
+ * @param {number} location 
  * @returns 
  */
 function solution(priorities, location) {

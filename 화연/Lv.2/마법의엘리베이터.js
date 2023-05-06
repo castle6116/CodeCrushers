@@ -8,25 +8,25 @@ function solution(storey) {
   let newStorey = storey;
   const oStr = String(newStorey).at(0);
   const getCount = (n) => {
-      const sLength = String(newStorey).length;
-      if(n > 4) {
-          answer += 1;
-          if(sLength > 1) {
-              newStorey = Math.pow(10, sLength) - newStorey;  
-          } else {
-              answer += (10 - n);
-              return answer;
-          }
+    const sLength = String(newStorey).length;
+    if(n > 4) {
+      answer += 1;
+      if(sLength > 1) {
+        newStorey = Math.pow(10, sLength) - newStorey;  
       } else {
-          answer += n;
-          newStorey = newStorey - (n*Math.pow(10, sLength - 1));
+        answer += (10 - n);
+        return answer;
       }
-      if(sLength === 1) {
-          return answer;
-      } else {
-          const nStr = String(newStorey).at(0);
-          return getCount(+nStr);  
-      }
+    } else {
+      answer += n;
+      newStorey = newStorey - (n*Math.pow(10, sLength - 1));
+    }
+    if(sLength === 1) {
+      return answer;
+    } else {
+      const nStr = String(newStorey).at(0);
+      return getCount(+nStr);  
+    }
   }
   return getCount(+oStr);
 }
