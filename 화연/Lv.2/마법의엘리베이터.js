@@ -1,32 +1,38 @@
 /**
- * tbd...
- * @param {*} storey 
+ * https://school.programmers.co.kr/learn/courses/30/lessons/148653
+ * @author HwaYeon
+ * @param {number} storey 
  * @returns 
  */
 function solution(storey) {
-  let answer = 0;
-  let newStorey = storey;
-  const oStr = String(newStorey).at(0);
-  const getCount = (n) => {
-    const sLength = String(newStorey).length;
-    if(n > 4) {
-      answer += 1;
-      if(sLength > 1) {
-        newStorey = Math.pow(10, sLength) - newStorey;  
-      } else {
-        answer += (10 - n);
-        return answer;
-      }
+  let answer = Number.MAX_SAFE_INTEGER;
+
+  const dfs = (num, counter) => {
+    if(counter >= answer) return;
+    
+    if(num === 0) {
+      answer = counter;
     } else {
-      answer += n;
-      newStorey = newStorey - (n*Math.pow(10, sLength - 1));
-    }
-    if(sLength === 1) {
-      return answer;
-    } else {
-      const nStr = String(newStorey).at(0);
-      return getCount(+nStr);  
+      let res = num % 10;
+      dfs(Math.floor(num / 10), counter + res);
+      dfs(Math.floor(num / 10) + 1, counter + 10 - res);
     }
   }
-  return getCount(+oStr);
+
+  dfs(storey, 0);
+  return answer;
+}
+
+
+
+
+/**
+ * @param {number} storey 
+ * @returns 
+ */
+function solution(storey) {
+  if (storey < 5) return storey;
+  const r = storey % 10;
+  const m = (storey - r) / 10;
+  return Math.min(r + solution(m), 10 - r + solution(m + 1));
 }
