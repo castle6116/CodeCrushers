@@ -1,9 +1,9 @@
 /**
  * https://school.programmers.co.kr/learn/courses/30/lessons/178871
  * @author HwaYeon
- * @param {*} players 
- * @param {*} callings 
- * @returns 
+ * @param {string[]} players 
+ * @param {string[]} callings 
+ * @returns {string[]} 
  */
 function solution(players, callings) {
   let playerObj = {}
