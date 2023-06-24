@@ -14,7 +14,7 @@ function solution(jobs) {
   while(jobs.length > i || priorityQueue.length !== 0) {
     if(jobs.length > i && time >= jobs[i][0]) {
       priorityQueue.push(jobs[i++]);
-      priorityQueue.sort(([, a],[, b]) => a - b)
+      priorityQueue.sort(([, a],[, b]) => a - b);
       continue;
     }
     if(priorityQueue.length !== 0 ) {
