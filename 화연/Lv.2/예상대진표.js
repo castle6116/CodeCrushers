@@ -7,13 +7,13 @@
  * @returns 
  */
 function solution(n,a,b) {
-    for(let i = 1; i <= n/2; i++) {
-        a = Math.ceil(a/2);
-        b = Math.ceil(b/2);
-        if(a === b) {
-            return i;
-        }
+  for(let i = 1; i <= n/2; i++) {
+    a = Math.ceil(a/2);
+    b = Math.ceil(b/2);
+    if(a === b) {
+      return i;
     }
+  }
 }
 
 // 잘 풀었음!
