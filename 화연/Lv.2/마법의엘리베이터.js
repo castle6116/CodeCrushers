@@ -2,14 +2,12 @@
  * https://school.programmers.co.kr/learn/courses/30/lessons/148653
  * @author HwaYeon
  * @param {number} storey 
- * @returns 
+ * @returns {number}
  */
 function solution(storey) {
   let answer = Number.MAX_SAFE_INTEGER;
-
   const dfs = (num, counter) => {
-    if(counter >= answer) return;
-    
+    if(answer <= counter) return;
     if(num === 0) {
       answer = counter;
     } else {
@@ -17,10 +15,9 @@ function solution(storey) {
       dfs(Math.floor(num / 10), counter + res);
       dfs(Math.floor(num / 10) + 1, counter + 10 - res);
     }
+    return answer;
   }
-
-  dfs(storey, 0);
-  return answer;
+  return dfs(storey, 0);
 }
 
 
@@ -28,7 +25,7 @@ function solution(storey) {
 
 /**
  * @param {number} storey 
- * @returns 
+ * @returns {number}
  */
 function solution(storey) {
   if (storey < 5) return storey;
