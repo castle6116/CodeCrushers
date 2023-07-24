@@ -5,7 +5,7 @@ def solution(n, k):
     arr = list(itertools.permutations([i for i in range(1,n+1)]))
     return (list(arr[k-1]))
 
-# 갯수
+# 수정
 def solution(n, k):
     def factorial(num):
         if num == 0:
