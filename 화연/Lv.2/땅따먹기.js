@@ -1,5 +1,6 @@
 /**
  * https://school.programmers.co.kr/learn/courses/30/lessons/12913
+ * lv.3 정수삼각형과 비슷 (Dynamic Programing)
  * @param {number[][]} land
  * @returns {number}
  */
