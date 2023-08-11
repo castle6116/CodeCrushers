@@ -40,7 +40,7 @@ def solution(nums1, nums2):
         answer.append(gcd1)
     return max(answer) if answer else 0
 
-# 내것 수정
+# 내것 수정 - 통과
 import math
 
 def solution(arrayA, arrayB):
