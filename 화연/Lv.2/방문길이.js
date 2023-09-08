@@ -1,22 +1,31 @@
+/**
+ * https://school.programmers.co.kr/learn/courses/30/lessons/49994
+ * @param {string} dirs
+ * @returns {number}
+ */
 function solution(dirs) {
-  let [x, y] = [0, 0];
-  const dirObj = {
-      'U': [0, 1], 
-      'D': [0, -1], 
-      'R': [1, 0], 
-      'L': [-1, 0], 
-  };
-  let answer = [];
-  for(let i = 0; i < dirs.length; i++) {
-      const [x1, y1] = dirObj[dirs[i]];
-      const [pX, pY] = [x, y];
-      let moveX = x + x1;
-      let moveY = y + y1;
-      let key = pX <= moveX ? `${pX}${pY}${moveX}${moveY}` : `${moveX}${moveY}${pX}${pY}`
-      if(Math.abs(moveX) <= 5 && Math.abs(moveY) <= 5) {
-          answer.push(key);
-          [x, y] = [moveX, moveY]; 
-      } 
+  const dirObj = { U: 1, D: -1, R: 1, L: -1 };
+  const root = [];
+  let posi = [5, 5];
+  for (const dir of [...dirs]) {
+    let [prevx, prevy] = posi;
+    if (dir === "U") {
+      if (posi[0] === 10) continue;
+      posi[0] += 1;
+    } else if (dir === "D") {
+      if (posi[0] === 0) continue;
+      posi[0] -= 1;
+    } else if (dir === "R") {
+      if (posi[1] === 10) continue;
+      posi[1] += 1;
+    } else {
+      if (posi[1] === 0) continue;
+      posi[1] -= 1;
+    }
+    const move = `(${prevx}, ${prevy})-(${posi[0]}, ${posi[1]})`;
+    const move2 = `(${posi[0]}, ${posi[1]})-(${prevx}, ${prevy})`;
+    root.push(move);
+    root.push(move2);
   }
-  return new Set(answer).size;
+  return new Set(root).size / 2;
 }
