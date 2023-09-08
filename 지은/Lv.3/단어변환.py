@@ -84,3 +84,30 @@ def solution(begin, target, words):
             return 0
         Q = temp_Q
         answer += 1
+
+
+# 내가 푼 두번째 풀이
+
+def solution(begin, target, words):
+    if target not in words:
+        return 0
+
+    min_depth = float('inf')
+    visited = set()
+
+    def dfs(curr, depth):
+        nonlocal min_depth
+        if curr == target:
+            min_depth = min(depth, min_depth)
+        for word in words:
+            diff_counter = 0
+            if word not in visited and sum(a != b for a, b in zip(curr, word)) == 1:
+                visited.add(word)
+                dfs(word, depth + 1)
+                visited.remove(word)
+
+    dfs(begin, 0)
+    return min_depth if min_depth != float('inf') else 0
+
+
+# BFS로 푸는것이 더 좋다. 왜냐하면 층별로 탐색하기 때문에 먼저 찾으면 더 빠르게 탐색을 종료할 수 있기 때문이다.
