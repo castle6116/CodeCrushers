@@ -1,3 +1,4 @@
+# 이진탐색
 def solution(distance, rocks, n):
     rocks.sort()
     rocks.append(distance)
