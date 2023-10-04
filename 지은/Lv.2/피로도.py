@@ -1,3 +1,4 @@
+import collections
 from itertools import permutations
 
 
@@ -56,3 +57,25 @@ def solution(k, dungeons):
             k -= y
             answer += 1
     return answer
+
+
+# backtrack
+def solution(k, dungeons):
+    max_dungeons = 0
+
+    def backtrack(remaining_energy, visited_dungeons, dungeon_count):
+        nonlocal max_dungeons
+        if dungeon_count > max_dungeons:
+            max_dungeons = dungeon_count
+
+        for i, (min_energy, cost_energy) in enumerate(dungeons):
+            if i in visited_dungeons:
+                continue
+            if remaining_energy >= min_energy:
+                backtrack(remaining_energy - cost_energy,
+                          visited_dungeons | {i}, dungeon_count + 1)
+
+    backtrack(k, set(), 0)
+    return max_dungeons
+
+
