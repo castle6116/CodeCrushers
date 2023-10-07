@@ -35,33 +35,31 @@ function solution(msg, maze) {
   const moveY = [-1, 0, 1, 0];
   const moveX = [0, 1, 0, -1];
   const mazeArr = Array.from(Array(len1), (_, i) => {
-    return maze[i].split('').map((m, j) => {
-      if(m === '2') {
+    return maze[i].split("").map((m, j) => {
+      if (m === "2") {
         return 2;
-      };
+      }
       let newM = [null, null, null, null];
-      for(let k = 0; k < 4; k++) {
+      for (let k = 0; k < 4; k++) {
         const y = i + moveY[k];
         const x = j + moveX[k];
-        if(y >= 0 && x >= 0 && y < len1 && x < len2 && maze[i][j] === '2') {
-          newM[k] = Number(m); 
+        if (y >= 0 && x >= 0 && y < len1 && x < len2 && maze[i][j] === "2") {
+          newM[k] = Number(m);
         }
       }
       return newM;
     });
   });
-  for(let i = 0; i < len1; i++) {
-    for(let j = 0; j < len2; j++) {
+  for (let i = 0; i < len1; i++) {
+    for (let j = 0; j < len2; j++) {
       const m = mazeArr[i][j];
       const set = [];
-      if(m === 2) continue;
+      if (m === 2) continue;
       const queue = [[i, j]];
-      while()
-      for(let k = 0; k < 4; k++) {
+      //while()
+      for (let k = 0; k < 4; k++) {
         const y = i + moveY[k];
         const x = j + moveX[k];
-
-
       }
     }
   }
