@@ -1,35 +1,31 @@
 function solution(s) {
   let count = 0;
-
+  const brackets = ["(", ")", "[", "]", "{", "}"];
   for (let i = 0; i <= s.length; i++) {
-    for (const bracket of ["(", ")", "[", "]", "{", "}"]) {
-      const modifiedString = s.slice(0, i) + bracket + s.slice(i);
-
-      if (isValidParentheses(modifiedString)) {
+    for (const bracket of brackets) {
+      const modifiedStr = s.slice(0, i) + bracket + s.slice(i);
+      if (validBrackets(modifiedStr)) {
         count++;
       }
     }
   }
-
   return count;
 }
 
-// Helper 함수: 주어진 문자열이 올바른 괄호 문자열인지 확인하는 함수
-function isValidParentheses(str) {
+function validBrackets(str) {
   const stack = [];
-
-  const brackets = {
+  const bracketsObj = {
     "(": ")",
     "[": "]",
     "{": "}",
   };
 
   for (const char of str) {
-    if (char in brackets) {
+    if (char in bracketsObj) {
       stack.push(char);
     } else {
       const top = stack.pop();
-      if (brackets[top] !== char) {
+      if (bracketsObj[top] !== char) {
         return false;
       }
     }
@@ -37,8 +33,3 @@ function isValidParentheses(str) {
 
   return stack.length === 0;
 }
-
-// 예제 사용
-const exampleString = "[]([[]){}";
-const result = solution(exampleString);
-console.log(result); // 출력 예상값: 3
